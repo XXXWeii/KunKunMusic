@@ -31,6 +31,7 @@ export default ({ mode }) =>
       VitePWA({
         registerType: "autoUpdate",
         workbox: {
+          globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
           clientsClaim: true,
           skipWaiting: true,
           cleanupOutdatedCaches: true,
@@ -52,9 +53,28 @@ export default ({ mode }) =>
             },
           ],
         },
+        shortcuts: [
+          {
+            name: "Open About",
+            short_name: "About",
+            description: "Open the about page",
+            url: "/home",
+            icons: [{ src: "/images/logo/favicon.png", sizes: "192x192" }],
+          },
+          {
+            name: "Report issue",
+            short_name: "Report",
+            description: "Open the issue report page",
+            url: "/home",
+            icons: [{ src: "/images/logo/favicon.png", sizes: "192x192" }],
+          },
+        ],
+        devOptions: {
+          enabled: true,
+        },
         manifest: {
-          name: "SPlayer",
-          short_name: "SPlayer",
+          name: "坤坤音乐",
+          short_name: "坤坤音乐",
           description: "一个简约的在线音乐播放器",
           display: "standalone",
           start_url: "/",

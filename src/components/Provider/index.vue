@@ -65,7 +65,7 @@ const changeTheme = () => {
 // 配置主题色
 const changeThemeColor = (val) => {
   const color = themeColorData[val];
-  console.log("当前主题色：" + val, color);
+  // console.log("当前主题色：" + val, color);
   themeOverrides.value = {
     common: color,
   };

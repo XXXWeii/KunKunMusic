@@ -66,9 +66,9 @@ const addToPlaylistId = ref(null);
 
 // 收藏到歌单
 const addToPlayList = (pid, tracks) => {
-  console.log("添加" + tracks + "到" + pid);
+  // console.log("添加" + tracks + "到" + pid);
   addSongToPlayList(pid, tracks).then((res) => {
-    console.log(res);
+    // console.log(res);
     if (res.status === 200) {
       $message.success("添加歌曲至歌单成功");
       closeAddToPlaylist();
@@ -90,7 +90,7 @@ const openAddToPlaylist = (id) => {
   }
   addToPlaylistModel.value = true;
   addToPlaylistId.value = id;
-  console.log("开启", addToPlaylistModel.value, addToPlaylistId.value);
+  // console.log("开启", addToPlaylistModel.value, addToPlaylistId.value);
 };
 
 // 关闭收藏到歌单

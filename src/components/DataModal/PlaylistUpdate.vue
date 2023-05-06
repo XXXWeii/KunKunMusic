@@ -76,14 +76,14 @@ const toUpdatePlayList = (e) => {
   e.preventDefault();
   playlistUpdateRef.value?.validate((errors) => {
     if (!errors) {
-      console.log("通过");
+      // console.log("通过");
       playlistUpdate(
         playlistUpdateId.value,
         playlistUpdateValue._value.name,
         playlistUpdateValue._value.desc,
         playlistUpdateValue._value.tags.join(";")
       ).then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.code === 200) {
           $message.success("编辑成功");
           closeUpdateModel();

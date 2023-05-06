@@ -34,7 +34,7 @@ const pageNumber = ref(
 // 获取搜索数据
 const getSearchDataList = (keywords, limit = 30, offset = 0, type = 1) => {
   getSearchData(keywords, limit, offset, type).then((res) => {
-    console.log(res);
+    // console.log(res);
     // 列表数据
     if (res.result.songs) {
       // 数据总数
@@ -83,7 +83,7 @@ watch(
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  // console.log(val);
   pagelimit.value = val;
   getSearchDataList(
     searchKeywords.value,

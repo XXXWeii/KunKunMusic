@@ -76,7 +76,7 @@ const albumArea = [
 // 获取新碟数据
 const getAlbumNewData = (area, limit = 30, offset = 0) => {
   getAlbumNew(area, limit, offset).then((res) => {
-    console.log(res);
+    //console.log(res);
     // 数据总数
     totalCount.value = res.total;
     // 列表数据
@@ -117,7 +117,7 @@ watch(
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  // console.log(val);
   pagelimit.value = val;
   getAlbumNewData(
     albumAreaChoose.value,

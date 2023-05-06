@@ -32,7 +32,7 @@ const totalCount = ref(0);
 // 获取歌手专辑
 const getArtistAblumsData = (id, limit = 30, offset = 0) => {
   getArtistAblums(id, limit, offset).then((res) => {
-    console.log(res);
+    //console.log(res);
     // 数据总数
     totalCount.value = res.artist.albumSize;
     // 列表数据
@@ -68,7 +68,7 @@ const pageNumberChange = (val) => {
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  //console.log(val);
   pagelimit.value = val;
   getArtistAblumsData(
     artistId.value,

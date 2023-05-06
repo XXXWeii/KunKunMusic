@@ -54,7 +54,7 @@ const pageNumber = ref(
 // 获取歌手信息
 const getArtistAllSongsData = (id, limit = 30, offset = 0, order = "hot") => {
   getArtistAllSongs(id, limit, offset, order).then((res) => {
-    console.log(res);
+    //console.log(res);
     if (res.songs[0]) {
       // 数据总数
       totalCount.value = res.total;
@@ -63,7 +63,7 @@ const getArtistAllSongsData = (id, limit = 30, offset = 0, order = "hot") => {
       // 列表数据
       const ids = res.songs.map((obj) => obj.id);
       getMusicDetail(ids.join(",")).then((res) => {
-        console.log(res);
+        //console.log(res);
         artistData.value = [];
         res.songs.forEach((v, i) => {
           artistData.value.push({
@@ -106,7 +106,7 @@ watch(
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  //console.log(val);
   pagelimit.value = val;
   getSearchDataList(
     artistId.value,

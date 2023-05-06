@@ -111,7 +111,7 @@ const parseLrc = (lyrics) => {
       .filter((c) => c.content.trim() !== "");
     // 检查是否为纯音乐，是则返回空数组
     if (parsedLyrics.length && /纯音乐，请欣赏/.test(parsedLyrics[0].content)) {
-      console.log("该歌曲为纯音乐");
+      // console.log("该歌曲为纯音乐");
       return [];
     }
     return parsedLyrics;

@@ -63,7 +63,7 @@ const annDuration = Number(import.meta.env.VITE_ANN_DURATION);
 // 空格暂停与播放
 const spacePlayOrPause = (e) => {
   if (e.code === "Space") {
-    console.log(e.target.tagName);
+    // console.log(e.target.tagName);
     if (router.currentRoute.value.name === "video") return false;
     if (e.target.tagName === "BODY") {
       e.preventDefault();
@@ -77,9 +77,9 @@ const spacePlayOrPause = (e) => {
 // 更改页面标题
 const setSiteTitle = (val) => {
   const title = val
-    ? val === "SPlayer"
+    ? val === "坤坤音乐"
       ? val
-      : val + " - SPlayer"
+      : val + " - 坤坤音乐"
     : site.siteTitle;
   site.siteTitle = title;
   sessionStorage.setItem("siteTitle", title);
@@ -102,7 +102,7 @@ const toRefreshLogin = () => {
           "lastRefreshDate",
           new Date(today).toLocaleDateString()
         );
-        console.log("刷新登录成功");
+        // console.log("刷新登录成功");
       } else {
         console.error("刷新登录失败");
       }
@@ -119,9 +119,9 @@ const signIn = () => {
     Promise.all(signInPromises)
       .then((results) => {
         localStorage.setItem("lastSignInDate", today);
-        console.log("签到成功！");
-        console.log("userDailySignin:", results[0]);
-        console.log("userYunbeiSign:", results[1]);
+        // console.log("签到成功！");
+        // console.log("userDailySignin:", results[0]);
+        // console.log("userYunbeiSign:", results[1]);
         $notification["success"]({
           content: "签到成功",
           meta: "每日签到及云贝签到成功",
@@ -133,7 +133,7 @@ const signIn = () => {
         $message.error("每日签到失败");
       });
   } else {
-    console.log("今天已经签到过了！");
+    // console.log("今天已经签到过了！");
   }
 };
 
@@ -161,18 +161,18 @@ onMounted(() => {
   }
 
   // 版权声明
-  const logoText = "SPlayer";
+  const logoText = "坤坤音乐";
   const copyrightNotice = `\n\n版本: ${packageJson.version}\n作者: ${packageJson.author}\n作者主页: ${packageJson.home}\nGitHub: ${packageJson.github}`;
-  console.info(
-    `%c${logoText} %c ${copyrightNotice}`,
-    "color:#f55e55;font-size:26px;font-weight:bold;",
-    "font-size:16px"
-  );
-  console.info(
-    "若站点出现异常，可尝试在下方输入 %c$cleanAll()%c 然后按回车来重置",
-    "background: #eaeffd;color:#f55e55;padding: 4px 6px;border-radius:8px;",
-    "background:unset;color:unset;"
-  );
+  // console.info(
+  //   `%c${logoText} %c ${copyrightNotice}`,
+  //   "color:#f55e55;font-size:26px;font-weight:bold;",
+  //   "font-size:16px"
+  // );
+  // console.info(
+  //   "若站点出现异常，可尝试在下方输入 %c$cleanAll()%c 然后按回车来重置",
+  //   "background: #eaeffd;color:#f55e55;padding: 4px 6px;border-radius:8px;",
+  //   "background:unset;color:unset;"
+  // );
 
   // 检查账号登录状态
   getLoginState()

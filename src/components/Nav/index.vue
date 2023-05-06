@@ -362,7 +362,7 @@ watch(
 
 onMounted(() => {
   changeUserOptions(user.userLogin);
-  console.log(router);
+  // console.log(router);
 });
 
 onBeforeUnmount(() => {
@@ -404,10 +404,9 @@ nav {
       flex-direction: row;
       align-items: center;
       @media (max-width: 520px) {
-        &.hidden{
+        &.hidden {
           display: none;
         }
-        
       }
       .n-icon {
         margin: 0 4px;

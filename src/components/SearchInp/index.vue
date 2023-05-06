@@ -230,7 +230,7 @@ const getSearchHotData = () => {
 const getSearchSuggestData = (keywords) => {
   searchData.suggest = [];
   getSearchSuggest(keywords).then((res) => {
-    console.log(res);
+    // console.log(res);
     searchData.suggest = res.result;
   });
 };
@@ -275,7 +275,7 @@ const toSearch = (val, type) => {
 // 回车搜索
 const inputkeydown = (e) => {
   if (e.key === "Enter" && inputValue.value != null) {
-    console.log("执行搜索" + inputValue.value.trim());
+    // console.log("执行搜索" + inputValue.value.trim());
     searchInpRef.value?.blur();
     site.searchInputActive = false;
     // 写入搜索历史
@@ -327,7 +327,7 @@ watch(
   (value) => {
     if (value.trim()) {
       debounce(() => {
-        console.log(value.trim());
+        // console.log(value.trim());
         getSearchSuggestData(value.trim());
       }, 500);
     }

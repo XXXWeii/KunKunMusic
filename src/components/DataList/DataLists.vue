@@ -573,14 +573,14 @@ const delCloudSong = (data) => {
 
 // 开启抽屉
 const openDrawer = (data) => {
-  console.log(data);
+  // console.log(data);
   drawerData.value = data;
   drawerShow.value = true;
 };
 
 // 播放并添加
 const playSong = (data, song) => {
-  console.log(data, song);
+  // console.log(data, song);
   music.setPersonalFmMode(false);
   if (router.currentRoute.value.name !== "history") music.setPlaylists(data);
   // 检查是否为云盘歌曲
@@ -603,7 +603,7 @@ const checkCanClick = (listData, item) => {
 
 // 跳转链接
 const jumpLink = (id, type) => {
-  console.log(id, type);
+  // console.log(id, type);
   switch (type) {
     case 1:
       router.push(`/song?id=${id}`);

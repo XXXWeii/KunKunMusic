@@ -111,7 +111,7 @@ const albumDescShow = ref(false);
 // 获取歌单信息
 const getAlbumData = (id) => {
   getAlbum(id).then((res) => {
-    console.log(res);
+    //console.log(res);
     // 专辑信息
     albumDetail.value = res.album;
     $setSiteTitle(res.album.name + " - 专辑");

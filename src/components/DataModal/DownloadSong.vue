@@ -84,7 +84,7 @@ const toSongDownload = (id, br, name) => {
   downloadStatus.value = true;
   getSongDownload(id, br)
     .then((res) => {
-      console.log(name, res);
+      // console.log(name, res);
       if (res.data.url) {
         const type = res.data.type.toLowerCase();
         const songName = name ? name : "未知曲目";
@@ -174,7 +174,7 @@ const generateLists = (data) => {
       size: getSongSize(data, "hr"),
     },
   ];
-  console.log(downloadLevel.value);
+  // console.log(downloadLevel.value);
 };
 
 // 获取下载大小

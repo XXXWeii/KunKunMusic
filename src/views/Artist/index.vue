@@ -135,7 +135,7 @@ const getArtistDetailData = (id) => {
   if (id) {
     getArtistDetail(id)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         artistData.value = {
           id: res.data.artist.id,
           name: res.data.artist.name,
@@ -162,7 +162,7 @@ const getArtistDetailData = (id) => {
 
 // Tab 选项卡变化
 const tabChange = (value) => {
-  console.log(value);
+  //console.log(value);
   router.push({
     path: `/artist/${value}`,
     query: {
@@ -213,7 +213,7 @@ onMounted(() => {
     !user.getUserArtistLists.isLoading
   ) {
     user.setUserArtistLists(() => {
-      console.log("执行回调", artistId.value, isLikeOrDislike(artistId.value));
+      //console.log("执行回调", artistId.value, isLikeOrDislike(artistId.value));
       artistLikeBtn.value = isLikeOrDislike(artistId.value);
     });
   }

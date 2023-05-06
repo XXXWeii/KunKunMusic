@@ -281,7 +281,7 @@ const useMusicDataStore = defineStore("musicData", {
     // 添加歌单至播放列表
     setPlaylists(value) {
       this.persistData.playlists = value.slice();
-      console.log(`已添加${value.length}首歌曲至播放列表`);
+      // console.log(`已添加${value.length}首歌曲至播放列表`);
     },
     // 更改每日推荐数据
     setDailySongs(value) {
@@ -314,7 +314,7 @@ const useMusicDataStore = defineStore("musicData", {
           console.error("歌词处理出错：" + err);
         }
       } else {
-        console.log("该歌曲暂无歌词");
+        // console.log("该歌曲暂无歌词");
         this.playSongLyric = [];
       }
     },
@@ -405,7 +405,7 @@ const useMusicDataStore = defineStore("musicData", {
           value.id !==
           this.persistData.playlists[this.persistData.playSongIndex]?.id
         ) {
-          console.log("播放歌曲与上一次不一致");
+          // console.log("播放歌曲与上一次不一致");
           this.playSongLink = null;
         }
       } catch (error) {
@@ -425,7 +425,7 @@ const useMusicDataStore = defineStore("musicData", {
         (o) => o.id === value.id
       );
       if (index !== -1) {
-        console.log(index);
+        // console.log(index);
         if (index === this.persistData.playSongIndex) return true;
         if (index < this.persistData.playSongIndex)
           this.persistData.playSongIndex--;

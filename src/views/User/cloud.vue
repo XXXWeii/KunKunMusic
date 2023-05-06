@@ -112,7 +112,7 @@ const upSongCompleted = ref(0);
 // 获取云盘数据
 const getCloudData = (limit = 30, offset = 0, scroll = true) => {
   getCloud(limit, offset).then((res) => {
-    console.log(res);
+    //console.log(res);
     totalCount.value = res.count;
     cloudData.value = [];
     // 云盘空间
@@ -148,19 +148,19 @@ const onUploadProgress = (progressEvent) => {
   const { loaded, total } = progressEvent;
   const percentCompleted = Math.round((loaded * 100) / total);
   upSongCompleted.value = Number(percentCompleted);
-  console.log(`上传 ${percentCompleted}% 完成`);
+  //console.log(`上传 ${percentCompleted}% 完成`);
 };
 
 // 歌曲上传
 const upCloudSongData = (e) => {
-  console.log(e);
+  // console.log(e);
   const files = e.target.files;
   if (!files[0]) return false;
   upSongType.value = "success";
   upSongModal.value = true;
   upCloudSong(files[0], onUploadProgress)
     .then((res) => {
-      console.log(res);
+      //console.log(res);
       if (res.code === 200) {
         closeUpSongModal();
         if (!res.privateCloud.simpleSong.al?.name) {
@@ -197,7 +197,7 @@ const resetUpSongModal = () => {
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  // console.log(val);
   pagelimit.value = val;
   getCloudData(val, (pageNumber.value - 1) * pagelimit.value);
 };

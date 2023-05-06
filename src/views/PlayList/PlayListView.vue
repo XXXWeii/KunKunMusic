@@ -154,7 +154,7 @@ const totalCount = ref(0);
 const getPlayListDetailData = (id) => {
   getPlayListDetail(id)
     .then((res) => {
-      console.log(res);
+    //  console.log(res);
       // 歌单总数
       totalCount.value = res.playlist.trackCount;
       // 歌单信息
@@ -171,7 +171,7 @@ const getPlayListDetailData = (id) => {
 // 获取歌单所有歌曲
 const getAllPlayListData = (id, limit = 30, offset = 0) => {
   getAllPlayList(id, limit, offset).then((res) => {
-    console.log(res);
+   // console.log(res);
     if (res.songs) {
       playListData.value = [];
       res.songs.forEach((v, i) => {
@@ -210,7 +210,7 @@ onMounted(() => {
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+ // console.log(val);
   pagelimit.value = val;
   getAllPlayListData(
     playListId.value,

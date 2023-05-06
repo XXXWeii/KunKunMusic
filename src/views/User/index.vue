@@ -52,7 +52,7 @@ const tabValue = ref(router.currentRoute.value.path.split("/")[2]);
 
 // Tab 选项卡变化
 const tabChange = (value) => {
-  console.log(value);
+  // console.log(value);
   router.push({
     path: `/user/${value}`,
   });

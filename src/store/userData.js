@@ -83,7 +83,7 @@ const useUserDataStore = defineStore("userData", {
         const getOtherData = [getUserLevel(), getUserSubcount()];
         Promise.all(getOtherData)
           .then((res) => {
-            console.log(res);
+            // console.log(res);
             this.userOtherData.level = res[0].data;
             this.userOtherData.subcount = res[1];
             this.setUserPlayLists();
@@ -215,7 +215,7 @@ const useUserDataStore = defineStore("userData", {
             });
             totalCount = res.count;
             offset += 30;
-            console.log(totalCount, offset, this.userAlbum.list);
+            // console.log(totalCount, offset, this.userAlbum.list);
           }
           this.userAlbum.isLoading = false;
           this.userAlbum.has = true;

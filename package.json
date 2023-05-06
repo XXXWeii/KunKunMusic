@@ -1,9 +1,9 @@
 {
-  "name": "splayer",
-  "version": "1.1.5",
-  "author": "imsyy",
-  "home": "https://imsyy.top",
-  "github": "https://github.com/imsyy/SPlayer",
+  "name": "KunKunMusic",
+  "version": "1.0.0",
+  "author": "XXXWeii",
+  "home": "https://zhangshuqi.com",
+  "github": "https://github.com/XXXWeii",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

@@ -89,7 +89,7 @@ const getToplistData = () => {
           });
         }
       });
-      console.log(toplistData);
+      //console.log(toplistData);
     } else {
       $message.error("排行榜获取失败");
     }

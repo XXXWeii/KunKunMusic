@@ -49,7 +49,7 @@ const bannerData = ref([]);
 // 请求轮播图数据
 const getBannerData = () => {
   getBanner().then((res) => {
-    console.log(res);
+    // console.log(res);
     bannerData.value = res.banners;
   });
 };
@@ -116,7 +116,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  console.log("销毁");
+  // console.log("销毁");
   window.removeEventListener("resize", getBannerHeight);
 });
 </script>

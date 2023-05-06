@@ -30,7 +30,7 @@ const artistData = ref([]);
 // 获取歌手热门歌曲
 const getArtistSongsData = (id) => {
   getArtistSongs(id).then((res) => {
-    console.log(res);
+    // console.log(res);
     artistData.value = [];
     res.hotSongs.forEach((v, i) => {
       artistData.value.push({

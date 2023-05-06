@@ -289,14 +289,14 @@ const getPlaySongData = (data, level = setting.songLevel) => {
       !pc &&
       (fee === 1 || fee === 4)
     ) {
-      console.log("网易云解灰");
+      // console.log("网易云解灰");
       getMusicNumUrlData(id);
     }
     // 免费或无版权
     else {
       checkMusicCanUse(id).then((res) => {
         if (res.success) {
-          console.log("当前歌曲可用");
+          // console.log("当前歌曲可用");
           if (!pc && (fee === 1 || fee === 4))
             $message.info("当前歌曲为 VIP 专享，仅可试听");
           // 获取音乐地址
@@ -319,7 +319,7 @@ const getPlaySongData = (data, level = setting.songLevel) => {
     });
   } catch (err) {
     if (music.getPlaylists[0] && music.getPlayState && $player) {
-      console.log("当前歌曲所有音源匹配失败：" + err);
+      // console.log("当前歌曲所有音源匹配失败：" + err);
       $message.warning("当前歌曲所有音源匹配失败，跳至下一首");
       music.setPlaySongIndex("next");
     }
@@ -331,12 +331,12 @@ const getMusicNumUrlData = (id) => {
   getMusicNumUrl(id)
     .then((res) => {
       if (res.code === 200) {
-        console.log("替换成功：" + res.data.url.replace(/^http:/, ""));
+        // console.log("替换成功：" + res.data.url.replace(/^http:/, ""));
         music.setPlaySongLink(res.data.url.replace(/^http:/, ""));
       }
     })
     .catch((err) => {
-      console.log("解灰失败：" + err);
+      // console.log("解灰失败：" + err);
       $message.warning("当前歌曲解灰失败，跳至下一首");
       music.setPlaySongIndex("next");
     });
@@ -351,7 +351,7 @@ const songUpdate = (e) => {
 
 // 歌曲缓冲完成
 const songCanplay = () => {
-  console.log("缓冲完成", music.getPlayState);
+  // console.log("缓冲完成", music.getPlayState);
   if (music.getPlayState && $player) {
     music.setPlayState(true);
     songInOrOut("play");
@@ -364,11 +364,11 @@ const songReady = () => {
   const sourceId = music.getPlaySongData?.sourceId
     ? music.getPlaySongData.sourceId
     : 0;
-  console.log("首次缓冲完成：" + songId + " / 来源：" + sourceId);
+  // console.log("首次缓冲完成：" + songId + " / 来源：" + sourceId);
   // 听歌打卡
   if (user.userLogin) {
     songScrobble(songId, sourceId).catch((err) => {
-      console.error("歌曲打卡失败：" + err);
+      // console.error("歌曲打卡失败：" + err);
     });
   }
 };
@@ -389,7 +389,7 @@ const songPlay = () => {
         default: () => h(MusicNoteFilled),
       }),
   });
-  console.log("开始播放：" + songName + " - " + songArtist);
+  // console.log("开始播放：" + songName + " - " + songArtist);
   // mediaSession
   if (
     "mediaSession" in navigator &&
@@ -434,7 +434,7 @@ const songPlay = () => {
     music.getPlaySongData.name +
     " - " +
     music.getPlaySongData.artist[0].name +
-    " - SPlayer";
+    " - 坤坤音乐";
 };
 
 // 音乐渐入渐出
@@ -530,12 +530,12 @@ const getPicColor = (url) => {
       img.addEventListener("load", async () => {
         const colorThief = new ColorThief();
         const color = await colorThief.getColor(img);
-        console.log(`当前封面主色：rgb(${color.join(",")})`);
+        // console.log(`当前封面主色：rgb(${color.join(",")})`);
         site.songPicColor = `rgb(${color.join(",")})`;
       });
     })
     .catch((err) => {
-      console.error("图像处理出错：" + err);
+      // console.error("图像处理出错：" + err);
       site.songPicColor = "rgb(128,128,128)";
     });
 };

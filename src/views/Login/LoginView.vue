@@ -174,7 +174,7 @@ const getQrKeyData = () => {
       clearInterval(qrCheckInterval.value);
       getQrKey().then((res) => {
         if (res.code == 200) {
-          console.log(res.data.unikey);
+          //console.log(res.data.unikey);
           qrImg.value = `https://music.163.com/login?codekey=${res.data.unikey}`;
           checkQrState(res.data.unikey);
         } else {
@@ -190,7 +190,7 @@ const checkQrState = (key) => {
   qrCheckInterval.value = setInterval(() => {
     if (!key) return false;
     checkQr(key).then((res) => {
-      console.log(res);
+      //console.log(res);
       if (res.code == 800) {
         getQrKeyData();
         loginStateMessage.value = null;
@@ -224,9 +224,9 @@ const getCaptcha = (data) => {
       if (errors) {
         $message.error("请输入正确的手机号");
       } else {
-        console.log(data + "发送验证码");
+        //console.log(data + "发送验证码");
         sentCaptcha(data).then((res) => {
-          console.log(res);
+          //console.log(res);
           if (res.code == 200) {
             $message.success("验证码发送成功");
             let countDown = 60;
@@ -257,18 +257,18 @@ const phoneLogin = (e) => {
   e.preventDefault();
   phoneFormRef.value?.validate((errors) => {
     if (!errors) {
-      console.log("通过");
+      //console.log("通过");
       verifyCaptcha(
         phoneFormData._value.phone,
         phoneFormData._value.captcha
       ).then((res) => {
-        console.log(res);
+        //console.log(res);
         if (res.code == 200) {
           toLogin(
             phoneFormData._value.phone,
             phoneFormData._value.captcha
           ).then((res) => {
-            console.log(res);
+            //console.log(res);
             // 暂时不支持，等支持了再写
           });
         }
@@ -282,7 +282,7 @@ const phoneLogin = (e) => {
 
 // Tab 切换
 const tabChange = (val) => {
-  console.log(val);
+  //console.log(val);
   if (val == "qr") {
     getQrKeyData();
   } else {

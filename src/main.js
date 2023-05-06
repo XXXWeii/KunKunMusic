@@ -18,21 +18,21 @@ app.use(router);
 
 app.mount("#app");
 
-// 检测到更新提醒
-let pwaMessage = null;
-navigator.serviceWorker.addEventListener("onupdatefound", () => {
-  console.info("发现站点更新，正在下载新版本");
-  pwaMessage = $message.loading("发现站点更新，正在下载新版本", {
-    closable: true,
-    duration: 0,
-  });
-});
-// 更新完成提醒
-navigator.serviceWorker.addEventListener("controllerchange", () => {
-  console.info("站点已更新，刷新后生效");
-  if (pwaMessage) pwaMessage?.destroy();
-  $message.info("站点已更新，刷新后生效", {
-    closable: true,
-    duration: 0,
-  });
-});
+// // 检测到更新提醒
+// let pwaMessage = null;
+// navigator.serviceWorker.addEventListener("onupdatefound", () => {
+//   console.info("发现站点更新，正在下载新版本");
+//   pwaMessage = $message.loading("发现站点更新，正在下载新版本", {
+//     closable: true,
+//     duration: 0,
+//   });
+// });
+// // 更新完成提醒
+// navigator.serviceWorker.addEventListener("controllerchange", () => {
+//   console.info("站点已更新，刷新后生效");
+//   if (pwaMessage) pwaMessage?.destroy();
+//   $message.info("站点已更新，刷新后生效", {
+//     closable: true,
+//     duration: 0,
+//   });
+// });

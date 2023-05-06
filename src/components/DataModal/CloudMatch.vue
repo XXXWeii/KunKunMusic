@@ -83,7 +83,7 @@ const setCloudMatchBtn = (data) => {
       $message.error("请先检查");
     } else if (smallSongDataRef.value.checkSongData()) {
       setCloudMatch(data.uid, data.sid, data.asid).then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data) {
           closeCloudMatch();
           $message.success("歌曲纠正成功");

@@ -190,7 +190,7 @@ const hqPLayListChange = (val) => {
 // 获取歌单数据
 const getPlaylistData = (cat = "全部歌单", limit = 30, offset = 0) => {
   getTopPlaylist(cat, limit, offset).then((res) => {
-    console.log(res);
+    //console.log(res);
     // 数据总数
     totalCount.value = res.total;
     // 列表数据
@@ -221,7 +221,7 @@ const getHqPlaylistData = (cat = "全部歌单", limit = 30) => {
     : null;
   // 获取数据
   getHighqualityPlaylist(cat, limit, before).then((res) => {
-    console.log(res);
+    //console.log(res);
     // 列表数据
     if (res.playlists[0]) {
       // 是否还有更多
@@ -260,7 +260,7 @@ const changeTagName = (name) => {
 
 // 排序方式变化
 const listOrderChange = (order) => {
-  console.log(order);
+  //console.log(order);
   router.push({
     path: "/discover/playlists",
     query: {
@@ -272,7 +272,7 @@ const listOrderChange = (order) => {
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  //console.log(val);
   pagelimit.value = val;
   getPlaylistData(catName.value, val, (pageNumber.value - 1) * pagelimit.value);
 };

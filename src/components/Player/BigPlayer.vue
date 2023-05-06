@@ -276,7 +276,7 @@ watch(
   (val) => {
     changePwaColor();
     if (val) {
-      console.log("开启播放器", music.getPlaySongLyricIndex);
+      // console.log("开启播放器", music.getPlaySongLyricIndex);
       nextTick(() => {
         lyricsScroll(music.getPlaySongLyricIndex);
         music.showPlayList = false;

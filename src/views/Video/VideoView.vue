@@ -223,7 +223,7 @@ onMounted(() => {
   getCommentData(videoId.value);
   // 播放器事件
   player.value.on("playing", () => {
-    console.log("视频开始播放");
+   // console.log("视频开始播放");
     music.setPlayState(false);
   });
 });

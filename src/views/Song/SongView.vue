@@ -128,7 +128,7 @@ const simiPlayList = ref([]);
 // 获取歌曲数据
 const getMusicDetailData = (id) => {
   getMusicDetail(id).then((res) => {
-    console.log(res);
+    // console.log(res);
     if (res.songs[0]) {
       musicDetail.value = res.songs[0];
       $setSiteTitle(
@@ -145,7 +145,7 @@ const getMusicDetailData = (id) => {
 // 获取相似数据
 const getSimiData = (id) => {
   getSimiPlayList(id).then((res) => {
-    console.log(res);
+    // console.log(res);
     simiPlayList.value = [];
     res.playlists.forEach((v) => {
       simiPlayList.value.push({
@@ -168,7 +168,7 @@ const addSong = (data) => {
     id: data.id,
     name: data.name,
   };
-  console.log(song);
+  // console.log(song);
   music.setPersonalFmMode(false);
   music.addSongToPlaylists(song);
 };

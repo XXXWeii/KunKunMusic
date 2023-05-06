@@ -21,7 +21,7 @@ const totalCount = ref(0);
 // 获取搜索数据
 const getSearchDataList = (keywords, limit = 30, offset = 0, type = 100) => {
   getSearchData(keywords, limit, offset, type).then((res) => {
-    console.log(res);
+    // console.log(res);
     // 数据总数
     totalCount.value = res.result.artistCount;
     // 列表数据

@@ -10,7 +10,7 @@
     />
   </div>
 </template>
-  
+
 <script setup>
 import { getSearchData } from "@/api/search";
 import { useRouter } from "vue-router";
@@ -33,7 +33,7 @@ const pageNumber = ref(
 // 获取搜索数据
 const getSearchDataList = (keywords, limit = 30, offset = 0, type = 1004) => {
   getSearchData(keywords, limit, offset, type).then((res) => {
-    console.log(res);
+    // console.log(res);
     // 数据总数
     totalCount.value = res.result.mvCount;
     // 列表数据
@@ -75,7 +75,7 @@ watch(
 
 // 每页个数数据变化
 const pageSizeChange = (val) => {
-  console.log(val);
+  // console.log(val);
   pagelimit.value = val;
   getSearchDataList(
     searchKeywords.value,

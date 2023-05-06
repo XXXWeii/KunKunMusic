@@ -4,7 +4,7 @@ const useSiteDataStore = defineStore("siteData", {
   state: () => {
     return {
       // 站点标题
-      siteTitle: "SPlayer",
+      siteTitle: "坤坤音乐",
       // 封面主题色
       songPicColor: "rgb(128,128,128)",
       // 搜索框激活状态
